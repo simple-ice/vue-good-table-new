@@ -1,6 +1,6 @@
 {
-  "name": "vue-good-table-next",
-  "version": "0.2.2",
+  "name": "vue-good-table-new",
+  "version": "0.2.3",
   "description": "A simple, clean data table for Vue (3.x) with essential features like sorting, column filtering, pagination etc",
   "author": {
     "name": "boris",
@@ -10,6 +10,10 @@
     {
       "name": "xaksis",
       "url": "https://github.com/xaksis"
+    },
+    {
+      "name": "simple-ice",
+      "email": "simplewu233@gmail.com"
     }
   ],
   "license": "MIT",
@@ -70,7 +74,10 @@
     "table",
     "datatable"
   ],
-  "repository": "github:borisflesch/vue-good-table-next",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simple-ice/vue-good-table-new"
+  },
   "sideEffects": [
     "*.vue",
     "*.css"
