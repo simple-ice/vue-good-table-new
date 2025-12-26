@@ -1,0 +1,20 @@
+@use "variables";
+@use 'sass:color';
+
+.vgt-loading{
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  margin-top: 117px;
+  &__content{
+    background-color:  color.adjust(variables.$link-color, $lightness: 25%) ;
+    color: variables.$link-color;
+    padding: 7px 30px;
+    border-radius: 3px;
+  }
+}
+
+.vgt-inner-wrap.is-loading{
+  opacity: 0.5;
+  pointer-events: none;
+}

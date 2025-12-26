@@ -1,0 +1,159 @@
+@use 'sass:color';
+@use 'overrides'; 
+@use "../variables";
+
+// suggested by wifey
+.vgt-table.black-rhino{
+  border: 1px solid variables.$border-color;
+  background-color: variables.$table-bg;
+
+  & tr.clickable {
+    &:hover{
+      background-color: variables.$highlight-color;
+    }
+  }
+
+  // td
+  & td {
+    border-bottom:  1px solid overrides.$border-color-td;
+    color: overrides.$text-color-td;
+  }
+
+  //th
+  & th.line-numbers, & th.vgt-checkbox-col {
+    color: variables.$text-color;
+    border-inline-end: 1px solid variables.$border-color;
+    background: linear-gradient(variables.$thead-bg-color-1, variables.$thead-bg-color-2);
+  }
+  thead th{
+    color: variables.$text-color;
+    text-shadow: 1px 1px overrides.$text-shadow-color;
+    border-bottom:  1px solid variables.$border-color;
+    background: linear-gradient(variables.$thead-bg-color-1, variables.$thead-bg-color-2);
+    &.sortable {
+      // color: l_ighten($text-color, 15%);
+      &:before{
+        border-top-color: variables.$chevron-color;
+      }
+      &:after{
+        border-bottom-color: variables.$chevron-color;
+      }
+      &.sorting-asc{
+        color: white;
+        &:after{
+          border-bottom-color: variables.$link-color;
+        }
+      }
+      &.sorting-desc {
+        &:before{
+          border-top-color: variables.$link-color;
+        }
+      }
+    }
+  }
+  
+  //bordered
+  &.bordered td {
+    border: 1px solid overrides.$border-color-td;
+  }
+
+  &.bordered th {
+    border: 1px solid variables.$border-color;
+  }
+
+  //input
+  .vgt-input, .vgt-select{
+    color: variables.$text-color;
+    background-color: overrides.$input-bg;
+    border: 1px solid variables.$input-border-color;
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: variables.$text-color;
+      opacity: 0.3; /* Firefox */
+    }
+  }
+}
+
+.vgt-wrap.black-rhino{
+  .vgt-wrap__footer{
+    color: variables.$text-color;
+    border: 1px solid variables.$border-color;
+    background: linear-gradient(variables.$thead-bg-color-1, variables.$thead-bg-color-2);
+    .footer__row-count{
+      position: relative;
+      padding-inline-end: 3px;
+      &__label{
+        color: variables.$secondary-text-color;
+      }
+      &__select{
+        color:  overrides.$text-color-td;
+        background: overrides.$input-bg;
+        border: none;
+        -webkit-appearance: none; 
+        -moz-appearance: none;
+        appearance: none;
+        padding-inline-end: 15px;
+        padding-inline-start : 5px;
+        border-radius: 3px;
+        &::-ms-expand{
+          display: none;
+        }
+        &:focus{
+          border-color: variables.$link-color;
+        }
+      }
+      &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 0px;
+        width: 0px;
+        inset-inline-end: 6px;
+        top: 50%;
+        margin-top: -1px;
+        border-top:  6px solid overrides.$text-color-td;
+        border-inline : 6px solid transparent;
+        border-bottom: none;
+        pointer-events: none
+      }
+    }
+    .footer__navigation{
+      &__page-btn{
+        color: variables.$text-color;
+        &.disabled,
+        &.disabled:hover {
+          .chevron:after{
+            border-inline-end-color: variables.$text-color;
+          }
+        }
+      }
+      &__info, &__page-info{
+        color: variables.$text-color;
+      }
+    }
+  }
+
+  // control bar
+  .vgt-global-search{
+    border:  1px solid variables.$border-color;
+    background: linear-gradient(variables.$thead-bg-color-1, variables.$thead-bg-color-2);
+  }
+  .vgt-global-search__input{
+    .input__icon{
+      .magnifying-glass{
+        border: 2px solid color.adjust(variables.$border-color, $lightness: -2%);
+        &:before{
+          background: color.adjust(variables.$border-color, $lightness: -2%);
+        }
+      }
+    }
+    .vgt-input, .vgt-select{
+      color: variables.$text-color;
+      background-color: color.adjust(variables.$thead-bg-color-2, $lightness: -5%);
+      border: 1px solid variables.$input-border-color;
+      &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: variables.$text-color;
+        opacity: 0.3; /* Firefox */
+      }
+    }
+  }
+}

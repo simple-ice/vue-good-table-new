@@ -1,0 +1,11 @@
+.gitignore
+.prettierignore
+.prettierrc
+.DS_Store
+node_modules/
+*.log
+dev
+src
+docs
+vp-docs
+.babelrc

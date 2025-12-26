@@ -1,0 +1,157 @@
+@use "variables";
+
+$footer-font-size: 1.1rem;
+
+.vgt-wrap__actions-footer{
+  border: 1px solid variables.$border-color;
+}
+.vgt-wrap__footer{
+  color: variables.$text-color;
+  font-size:  $footer-font-size;
+  padding:  1em;
+  border: 1px solid variables.$border-color;
+  background: linear-gradient(variables.$thead-bg-color-1, variables.$thead-bg-color-2);
+  .footer__row-count{
+    position: relative;
+    padding-inline-end: 3px;
+    &__label, &__select{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &__label{
+      font-size: $footer-font-size;
+    }
+    &__select{
+      font-size: $footer-font-size;
+      background-color: transparent;
+      width: auto;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      height: auto;
+      margin-inline-start: 8px;
+      color:  variables.$text-color;
+      font-weight: bold;
+      -webkit-appearance: none; 
+      -moz-appearance: none;
+      appearance: none;
+      padding-inline-end: 15px;
+      padding-inline-start: 5px;
+      &::-ms-expand{
+        display: none;
+      }
+      &:focus{
+        outline: none;
+        border-color: variables.$link-color;
+      }
+    }
+    &::after{
+      content: '';
+      display: block;
+      position: absolute;
+      height: 0px;
+      width: 0px;
+      inset-inline-end: 6px;     
+      top: 50%;
+      margin-top: -1px;
+      border-top:  6px solid variables.$text-color;
+      border-inline: 6px solid transparent;
+      border-bottom: none;
+      pointer-events: none
+    }
+  }
+  .footer__navigation{
+    > button:first-of-type {
+      margin-right: 16px;
+    } 
+    font-size: $footer-font-size;
+    &__page-btn, &__info, &__page-info{
+      display: inline-block;
+      vertical-align: middle;
+      color: variables.$secondary-text-color;
+    }
+    &__page-btn{
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: transparent;
+      border: none;
+      text-decoration: none;
+      color: variables.$text-color;
+      font-weight: bold;
+      white-space:nowrap;
+      vertical-align: middle;
+      &:hover{
+        cursor: pointer;
+      }
+      &.disabled,
+      &.disabled:hover {
+        opacity: 0.5;
+        cursor: not-allowed;
+        .chevron.start:after{
+          border-inline-start-color: variables.$text-color;
+        }
+        .chevron.end:after{
+          border-inline-end-color: variables.$text-color;
+        }
+      }
+      span{
+        display: inline-block;
+        vertical-align: middle;
+        font-size: $footer-font-size;
+      }
+      .chevron{
+        width:  24px;
+        height:  24px;
+        border-radius: 15%;
+        position:  relative;
+        margin:  0;
+        display: inline-block;
+        vertical-align: middle;
+        &:after{
+          content:  '';
+          position:  absolute;
+          display:  block;
+          inset-inline-start:  50%;
+          top:  50%;
+          margin-top:  -6px;
+          border-top: 6px solid transparent;
+          border-bottom: 6px solid transparent;
+          margin-inline-start:  -3px;
+        }
+        &.start::after {border-inline-end:  6px solid variables.$link-color;}
+        &.end::after {border-inline-start:  6px solid variables.$link-color;}
+      }
+    }
+    &__info, &__page-info{
+      display: inline-block;
+      margin-inline:   16px;
+    }
+    &__page-info{
+      span{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      &__current-entry{
+        width: 30px;
+        text-align: center;
+        vertical-align: middle;
+        display: inline-block;
+        margin-inline: 10px;
+        font-weight: bold;
+      }
+    }
+  
+  
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  /* on small screens hide the info */
+  .vgt-wrap__footer .footer__navigation__info{
+    display:  none;
+  }
+  .vgt-wrap__footer .footer__navigation__page-btn{
+    margin-left: 16px;
+  }
+}

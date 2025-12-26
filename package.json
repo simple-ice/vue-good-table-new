@@ -1,0 +1,78 @@
+{
+  "name": "vue-good-table-next",
+  "version": "0.2.2",
+  "description": "A simple, clean data table for Vue (3.x) with essential features like sorting, column filtering, pagination etc",
+  "author": {
+    "name": "boris",
+    "email": "boris@singlequote.net"
+  },
+  "contributors": [
+    {
+      "name": "xaksis",
+      "url": "https://github.com/xaksis"
+    }
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "test:unit": "vue-cli-service test:unit",
+    "dev": "vite --config playground/vite.config.js",
+    "docs:build": "vuepress build vp-docs",
+    "docs:dev": "vuepress dev vp-docs"
+  },
+  "main": "dist/vue-good-table.cjs.js",
+  "module": "dist/vue-good-table.esm.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "dependencies": {
+    "date-fns": "^2.25.0",
+    "lodash.isequal": "^4.5.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-replace": "^6.0.1",
+    "@rollup/plugin-terser": "latest",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/babel-preset-app": "^5.0.8",
+    "@vue/cli-plugin-unit-jest": "^4.5.15",
+    "@vue/cli-service": "^4.5.15",
+    "@vue/component-compiler-utils": "^3.3.0",
+    "@vue/test-utils": "2.4.6",
+    "@vuepress/bundler-vite": "^2.0.0-rc.15",
+    "@vuepress/plugin-google-analytics": "^2.0.0-rc.15",
+    "@vuepress/plugin-register-components": "^2.0.0-rc.15",
+    "@vuepress/plugin-search": "^2.0.0-rc.15",
+    "@vuepress/theme-default": "^2.0.0-rc.42",
+    "chai": "^4.1.2",
+    "chalk": "^4.1.0",
+    "chromedriver": "^95.0.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "postcss-loader": "^6.2.0",
+    "rollup": "4.28.1",
+    "rollup-plugin-analyzer": "^4.0.0",
+    "rollup-plugin-scss": "^4.0.0",
+  
+    "sass": "^1.82.0",
+    "sinon": "^11.1.2",
+    "typescript": "^4.4.4",
+    "vite": "^6.0.3",
+    "vue": "^3.5.13",
+    "vue-jest": "^5.0.0-0",
+    "vuepress": "^2.0.0-rc.15",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "table",
+    "datatable"
+  ],
+  "repository": "github:borisflesch/vue-good-table-next",
+  "sideEffects": [
+    "*.vue",
+    "*.css"
+  ]
+}

@@ -1,0 +1,10 @@
+@use "variables";
+
+.vgt-table{
+  &.bordered td, &.bordered th {
+      border: 1px solid variables.$border-color;
+  }
+  &.bordered th.vgt-row-header{
+    border-bottom: 3px solid variables.$border-color;
+  }
+}
