@@ -76,18 +76,21 @@ Some example recipes for inspiration
 
 Install with npm:
 ```bash
-npm install vue-good-table-next
+npm install vue-good-table-new
 ```
 
-Install with npm:
+Install with yarn:
 ```bash
-yarn add vue-good-table-next
+yarn add vue-good-table-new
 ```
-
+Install with pnpm:
+```bash
+pnpm add vue-good-table-new
+```
 Import globally in app:
 
 ```javascript
-import VueGoodTablePlugin from 'vue-good-table-next';
+import VueGoodTablePlugin from 'vue-good-table-new';
 
 // import the styles 
 import 'vue-good-table-next/dist/vue-good-table-next.css'
